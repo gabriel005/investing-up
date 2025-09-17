@@ -1,5 +1,5 @@
 .asset-table-container {
-  width: 90%;
+  //width: 90%;
   max-width: 900px;
   background: #fff;
   border-radius: 12px;
@@ -10,7 +10,7 @@
 }
 
 .asset-table-container-nothing {
-  max-width: 900px;
+  //max-width: 900px;
   padding: 0;
   margin-bottom: 48px; // espaço extra abaixo da tabela
   margin-top: 100px;
@@ -49,6 +49,51 @@
       color: #222;
       border-bottom: 1px solid #f0f0f0;
       vertical-align: middle;
+    }
+  }
+}
+
+/* 🔥 estilos exclusivos para as tabelas de ranking */
+.ranking-tables {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 24px auto;
+  max-width: 900px;
+}
+
+.ranking-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 16px;
+  text-align: center;
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #293038;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 8px;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #f0f0f0;
+      text-align: center;
+    }
+
+    th {
+      background: #f8f8f8;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background: #fafafa;
     }
   }
 }
