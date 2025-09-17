@@ -1,0 +1,81 @@
+[
+  {
+    "Ativos": "PETR4",
+    "DY Atual": 8.2,
+    "PVP": 1.5,
+    "Liquidez diária": 2500000,
+    "Setor": "Petróleo, Gás e Biocombustíveis",
+    "chartData": {
+      "1d": [{ "time": "09:00", "value": 12.1 }, { "time": "10:00", "value": 12.3 }],
+      "7d": [{ "time": "Seg", "value": 12.1 }, { "time": "Ter", "value": 12.3 }],
+      "1m": [{ "time": "01/06", "value": 12.1 }, { "time": "07/06", "value": 12.3 }],
+      "6m": [{ "time": "Jan", "value": 12.1 }, { "time": "Fev", "value": 12.3 }],
+      "1y": [{ "time": "2024", "value": 12.1 }, { "time": "2025", "value": 12.3 }],
+      "5y": [{ "time": "2021", "value": 11.1 }, { "time": "2022", "value": 11.5 }],
+      "10y": [{ "time": "2016", "value": 10.1 }, { "time": "2018", "value": 10.8 }]
+    }
+  },
+  {
+    "Ativos": "VALE3",
+    "DY Atual": 7.1,
+    "PVP": 2.3,
+    "Liquidez diária": 1800000,
+    "Setor": "Minerais Metálicos"
+  },
+  {
+    "Ativos": "ITUB4",
+    "DY Atual": 5.5,
+    "PVP": 1.8,
+    "Liquidez diária": 1200000,
+    "Setor": "Financeiro"
+  },
+  {
+    "Ativos": "BBDC4",
+    "DY Atual": 6.0,
+    "PVP": 1.2,
+    "Liquidez diária": 950000,
+    "Setor": "Financeiro"
+  },
+  {
+    "Ativos": "OIBR3",
+    "DY Atual": 0.0,
+    "PVP": 0.3,
+    "Liquidez diária": 400000,
+    "Setor": "Telecomunicações"
+  },
+  {
+    "Ativos": "ABEV3",
+    "DY Atual": 4.8,
+    "PVP": 2.0,
+    "Liquidez diária": 850000,
+    "Setor": "Bebidas"
+  },
+  {
+    "Ativos": "WEGE3",
+    "DY Atual": 1.7,
+    "PVP": 7.5,
+    "Liquidez diária": 700000,
+    "Setor": "Máquinas e Equipamentos"
+  },
+  {
+    "Ativos": "MGLU3",
+    "DY Atual": 0.5,
+    "PVP": 6.2,
+    "Liquidez diária": 600000,
+    "Setor": "Comércio"
+  },
+  {
+    "Ativos": "BBAS3",
+    "DY Atual": 8.0,
+    "PVP": 1.1,
+    "Liquidez diária": 500000,
+    "Setor": "Financeiro"
+  },
+  {
+    "Ativos": "LREN3",
+    "DY Atual": 2.2,
+    "PVP": 3.4,
+    "Liquidez diária": 300000,
+    "Setor": "Comércio"
+  }
+]
