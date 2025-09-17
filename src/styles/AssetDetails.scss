@@ -1,14 +1,34 @@
 .asset-details-container {
   width: 90%;
-  max-width: 600px;
+  max-width: 1200px; // aumenta o limite para caber as duas colunas
   margin: 0 auto;
   border-radius: 12px;
   padding: 40px 0 32px 0;
+
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  flex-direction: row; // muda para colunas lado a lado
+  align-items: flex-start;
+  gap: 32px; // espaço entre esquerda e direita
 }
 
+/* Coluna esquerda (fundamentos) */
+.asset-details-left {
+  flex: 1;
+  max-width: 40%; // ocupa cerca de 40% da tela
+  display: flex;
+  flex-direction: column;
+}
+
+/* Coluna direita (gráfico + extras) */
+.asset-details-chart {
+  flex: 2;
+  max-width: 60%; // ocupa o resto
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Botão de voltar */
 .asset-details-back-btn {
   align-self: flex-start;
   margin-bottom: 32px;
@@ -26,6 +46,7 @@
   background: #eaeaea;
 }
 
+/* Tabela de fundamentos */
 .asset-details-table {
   width: 100%;
   border-collapse: separate;
@@ -36,12 +57,12 @@
   background: #fff;
 
   thead {
-    background: #293038; // nova cor do header
+    background: #293038; // header escuro
     th {
       font-weight: 600;
       padding: 16px 24px;
       text-align: left;
-      color: #fff; // texto branco para contraste
+      color: #fff;
       font-size: 1.1rem;
       border-bottom: 1px solid #eaeaea;
     }

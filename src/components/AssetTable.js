@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // 🔥 hook para navegação
 import "../styles/AssetTable.scss";
 
 function formatLiquidez(valor) {
@@ -14,32 +15,28 @@ const SORT_FIELDS = {
   LIQUIDEZ: "Liquidez diária"
 };
 
-function AssetTable({ assets, onSelect }) {
+function AssetTable({ assets }) {
+  const navigate = useNavigate(); // 🔥 instanciando hook
   const [sortField, setSortField] = useState("DY Atual");
   const [sortOrder, setSortOrder] = useState("desc");
 
-  // Função para alternar campo e ordem de ordenação
   const handleSort = (field) => {
     if (sortField === field) {
-      setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"));
+      setSortOrder(prev => (prev === "asc" ? "desc" : "asc"));
     } else {
       setSortField(field);
       setSortOrder("asc");
     }
   };
 
-  // Ordena os ativos conforme o campo e ordem
   const sortedAssets = [...assets].sort((a, b) => {
     const aValue = a[sortField] || 0;
     const bValue = b[sortField] || 0;
-    if (sortOrder === "asc") {
-      return aValue - bValue;
-    }
-    return bValue - aValue;
+    return sortOrder === "asc" ? aValue - bValue : bValue - aValue;
   });
 
   if (!assets || assets.length === 0) {
-    return <p className="asset-table-container">Nenhum ativo encontrado.</p>;
+    return <p className="asset-table-container-nothing">Nenhum ativo encontrado.</p>;
   }
 
   return (
@@ -48,38 +45,30 @@ function AssetTable({ assets, onSelect }) {
         <thead>
           <tr>
             <th>ATIVOS</th>
-            <th
-              style={{ cursor: "pointer" }}
-              onClick={() => handleSort(SORT_FIELDS.DY)}
-            >
-              DY ATUAL
-              {sortField === SORT_FIELDS.DY ? (sortOrder === "asc" ? " ▼" : " ▲") : ""}
+            <th style={{ cursor: "pointer" }} onClick={() => handleSort(SORT_FIELDS.DY)}>
+              DY ATUAL {sortField === SORT_FIELDS.DY ? (sortOrder === "asc" ? " ▼" : " ▲") : ""}
             </th>
-            <th
-              style={{ cursor: "pointer" }}
-              onClick={() => handleSort(SORT_FIELDS.PVP)}
-            >
-              PVP
-              {sortField === SORT_FIELDS.PVP ? (sortOrder === "asc" ? " ▼" : " ▲") : ""}
+            <th style={{ cursor: "pointer" }} onClick={() => handleSort(SORT_FIELDS.PVP)}>
+              PVP {sortField === SORT_FIELDS.PVP ? (sortOrder === "asc" ? " ▼" : " ▲") : ""}
             </th>
-            <th
-              style={{ cursor: "pointer" }}
-              onClick={() => handleSort(SORT_FIELDS.LIQUIDEZ)}
-            >
-              LIQUIDEZ DIÁRIA
-              {sortField === SORT_FIELDS.LIQUIDEZ ? (sortOrder === "asc" ? " ▼" : " ▲") : ""}
+            <th style={{ cursor: "pointer" }} onClick={() => handleSort(SORT_FIELDS.LIQUIDEZ)}>
+              LIQUIDEZ DIÁRIA {sortField === SORT_FIELDS.LIQUIDEZ ? (sortOrder === "asc" ? " ▼" : " ▲") : ""}
             </th>
             <th>SETOR</th>
           </tr>
         </thead>
         <tbody>
           {sortedAssets.map((asset, index) => (
-            <tr key={index} style={{ cursor: "pointer" }} onClick={() => onSelect(asset)}>
-              <td>{asset.Ativos || ''}</td>
-              <td>{asset["DY Atual"] || ''}</td>
-              <td>{asset.PVP || ''}</td>
+            <tr
+              key={index}
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate(`/asset/${asset.Ativos}`)} // 🔥 navega clicando na linha
+            >
+              <td>{asset.Ativos || ""}</td>
+              <td>{asset["DY Atual"] || ""}</td>
+              <td>{asset.PVP || ""}</td>
               <td>{formatLiquidez(asset["Liquidez diária"])}</td>
-              <td>{asset.Setor || ''}</td>
+              <td>{asset.Setor || ""}</td>
             </tr>
           ))}
         </tbody>

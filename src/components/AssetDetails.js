@@ -72,9 +72,9 @@ function AssetDetails({ asset, onBack }) {
   return (
     <div className="asset-details-container">
       <div className="asset-details-left">
-        <button className="asset-details-back-btn" onClick={onBack}>
+        {/* <button className="asset-details-back-btn" onClick={onBack}>
           Voltar
-        </button>
+        </button> */}
         <table className="asset-details-table">
           <thead>
             <tr>
