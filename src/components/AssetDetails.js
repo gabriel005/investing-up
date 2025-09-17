@@ -2,57 +2,6 @@ import React, { useState } from "react";
 import "../styles/AssetDetails.scss";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
-// Exemplo de dados fictícios para diferentes períodos
-const chartData = {
-  "1d": [
-    { time: "09:00", value: 12.1 },
-    { time: "10:00", value: 12.3 },
-    { time: "11:00", value: 12.2 },
-    { time: "12:00", value: 12.4 }
-  ],
-  "7d": [
-    { time: "Seg", value: 12.1 },
-    { time: "Ter", value: 12.3 },
-    { time: "Qua", value: 12.2 },
-    { time: "Qui", value: 12.4 },
-    { time: "Sex", value: 12.5 },
-    { time: "Sáb", value: 12.6 },
-    { time: "Dom", value: 12.7 }
-  ],
-  "1m": [
-    { time: "01/06", value: 12.1 },
-    { time: "07/06", value: 12.3 },
-    { time: "14/06", value: 12.2 },
-    { time: "21/06", value: 12.4 },
-    { time: "28/06", value: 12.5 }
-  ],
-  "6m": [
-    { time: "Jan", value: 12.1 },
-    { time: "Fev", value: 12.3 },
-    { time: "Mar", value: 12.2 },
-    { time: "Abr", value: 12.4 },
-    { time: "Mai", value: 12.5 },
-    { time: "Jun", value: 12.6 }
-  ],
-  "1y": [
-    { time: "2024", value: 12.1 },
-    { time: "2025", value: 12.3 }
-  ],
-  "5y": [
-    { time: "2021", value: 11.1 },
-    { time: "2022", value: 11.5 },
-    { time: "2023", value: 12.0 },
-    { time: "2024", value: 12.3 },
-    { time: "2025", value: 12.7 }
-  ],
-  "10y": [
-    { time: "2016", value: 10.1 },
-    { time: "2018", value: 10.8 },
-    { time: "2020", value: 11.5 },
-    { time: "2022", value: 12.0 },
-    { time: "2024", value: 12.3 }
-  ]
-};
 
 const periods = [
   { label: "1 Dia", value: "1d" },
@@ -64,7 +13,7 @@ const periods = [
   { label: "10 Anos", value: "10y" }
 ];
 
-function AssetDetails({ asset, onBack }) {
+function AssetDetails({ asset }) {
   const [period, setPeriod] = useState("1d");
 
   if (!asset) return null;
